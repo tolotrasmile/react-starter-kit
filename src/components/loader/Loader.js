@@ -1,8 +1,9 @@
-import React from 'react'
 import './Loader.css'
 
+import React from 'react'
+
 const Loader = () => (
-  <div class="lds-roller">
+  <div className='lds-roller'>
     <div />
     <div />
     <div />
