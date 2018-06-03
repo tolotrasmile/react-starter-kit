@@ -1,4 +1,4 @@
-import { Button } from './styled/Controls'
+import Loader from './components/loader/Loader'
 import { Provider } from 'react-redux'
 import React from 'react'
 import { render } from 'react-dom'
@@ -6,7 +6,7 @@ import store from './store'
 
 const App = () => (
   <div>
-    <Button>Hello</Button>
+    <Loader />
   </div>
 )
 
