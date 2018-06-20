@@ -1,11 +1,11 @@
 import { DECREMENT, INCREMENT } from '../types/counter.type'
 
-export const increment = (index, count) => ({
+export const increment = (count) => ({
   type: INCREMENT,
-  payload: { index, count }
+  payload: count
 })
 
-export const decrement = (index, count) => ({
+export const decrement = (count) => ({
   type: DECREMENT,
-  payload: { index, count }
+  payload: count
 })
