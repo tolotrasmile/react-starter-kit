@@ -4,21 +4,22 @@ import { increment, decrement } from '../../store/actions/counter.action'
 
 class Counter extends Component {
   render () {
+    const { count, increment, decrement } = this.props
     return (
       <div>
-        <h1>{this.props.count}</h1>
-        <button onClick={this.props.increment}>+</button>
-        <button onClick={this.props.decrement}>-</button>
+        <h1>{count}</h1>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
       </div>
     )
   }
 }
 
-const states = state => state.counter
+const mapStateToProps = state => state.counter
 
-const dispatchs = dispatch => ({
-  increment: () => dispatch(increment(1)),
-  decrement: () => dispatch(decrement(1))
+const mapDispatchToProps = dispatch => ({
+  increment: () => dispatch(increment(2)),
+  decrement: () => dispatch(decrement(2))
 })
 
-export default connect(states, dispatchs)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

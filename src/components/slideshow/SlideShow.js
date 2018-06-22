@@ -1,13 +1,11 @@
 import './SlideShow.css'
-
 import React, { Children, Component } from 'react'
-
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class SlideShow extends Component {
   state = {
     total: 0,
-    current: 0,
+    current: 0
   }
 
   componentDidMount() {
@@ -24,8 +22,8 @@ class SlideShow extends Component {
     const { total, current } = this.state
     this.setState({
       current: current + 1 === total? 0 : current + 1
-    });
-  };
+    })
+  }
 
   render() {
     const { children } = this.props;
@@ -36,7 +34,7 @@ class SlideShow extends Component {
         <div>{bullets}</div>
         <ReactCSSTransitionGroup
           className="group"
-          transitionName="example"
+          transitionName="slideshow"
           transitionEnterTimeout={800}
           transitionLeaveTimeout={800}
         >

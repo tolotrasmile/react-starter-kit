@@ -1,17 +1,17 @@
-.example-enter {
+.slideshow-enter {
   opacity: 0.01;
 }
 
-.example-enter.example-enter-active {
+.example-enter.slideshow-enter-active {
   opacity: 1;
   transition: opacity 800ms ease-in;
 }
 
-.example-leave {
+.slideshow-leave {
   opacity: 1;
 }
 
-.example-leave.example-leave-active {
+.slideshow-leave.slideshow-leave-active {
   opacity: 0.01;
   transition: opacity 800ms ease-in;
 }
