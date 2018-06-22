@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PostItem from './PostItem'
 import { connect } from 'react-redux'
 
-class Posts extends React.Component {
+class Posts extends Component {
 
   constructor (props) {
     super(props)
@@ -19,9 +19,9 @@ class Posts extends React.Component {
     return (
       <div>
         <h1>Posts List</h1>
-        <ul>
+        <div>
           {items.map((item, index) => <PostItem key={item.id} post={item} index={index}/>)}
-        </ul>
+        </div>
       </div>
     )
   }
