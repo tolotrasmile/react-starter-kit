@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT } from '../types/counter.type'
+import { DECREMENT, INCREMENT } from './counter.type'
 
 const initialState = { count: 0 }
 
