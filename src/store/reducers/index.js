@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import counter from './counter/counter.reducer'
-import posts from './posts/posts.reducer'
+import counter from './counter'
+import posts from './posts'
 
 export default combineReducers({ counter, posts })

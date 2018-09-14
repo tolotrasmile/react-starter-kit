@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
 import PostItem from './PostItem'
 import { connect } from 'react-redux'
+import { fetchPosts } from "../../store/reducers/posts"
 
 class Posts extends Component {
 
-  constructor (props) {
-    super(props)
-    this.fetchPosts().then(posts =>  this.props.fetchPosts(posts))
+  async componentDidMount() {
+    await this.fetchPosts()
   }
 
-  async fetchPosts () {
-   return await fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
+  async fetchPosts() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    if (response.ok) {
+      const posts = await response.json()
+      this.props.fetchPosts(posts)
+    }
   }
 
-  render () {
+  render() {
     const { items } = this.props
     return (
       <div>
@@ -28,11 +31,5 @@ class Posts extends Component {
 }
 
 const mapStateToProps = state => state.posts
-const mapDispatchToProps = dispatch => ({
-  fetchPosts: (items) => dispatch({
-    type: 'FETCH_POSTS',
-    payload: items
-  })
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Posts)
+export default connect(mapStateToProps, { fetchPosts })(Posts)

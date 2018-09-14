@@ -1,4 +1,9 @@
-import { DECREMENT, INCREMENT } from './counter.type'
+export const INCREMENT = 'counter/INCREMENT'
+export const DECREMENT = 'counter/DECREMENT'
+
+export const increment = (count) => ({ type: INCREMENT, payload: count })
+
+export const decrement = (count) => ({ type: DECREMENT, payload: count })
 
 const initialState = { count: 0 }
 
